@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>ERP Farmacias SIMI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>ERP Farmacias SIMI</h1>
+        <p>Sistema de gestion de productos e insumos farmaceuticos</p>
+    </header>
+
+    <main>
+        <section class="card">
+            <h2>Registrar nuevo producto</h2>
+
+            <form id="productoForm">
+                <input type="text" id="nombre" placeholder="Nombre del producto" required>
+                <input type="text" id="descripcion" placeholder="Descripcion" required>
+                <input type="number" id="precio" placeholder="Precio" required>
+                <input type="number" id="stock" placeholder="Stock" required>
+                <button type="submit">Guardar producto</button>
+            </form>
+        </section>
+
+        <section class="card">
+            <h2>Listado de productos</h2>
+            <button onclick="cargarProductos()">Actualizar listado</button>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Descripcion</th>
+                        <th>Precio</th>
+                        <th>Stock</th>
+                    </tr>
+                </thead>
+                <tbody id="tablaProductos"></tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
