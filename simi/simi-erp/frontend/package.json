@@ -1,0 +1,20 @@
+{
+  "name": "simi-erp-frontend-eva3",
+  "version": "1.0.0",
+  "description": "ERP SIMI EVA3 con Node.js, Express, autenticacion por token y conexion a AWS RDS PostgreSQL",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Grupo EVA3 Arquitectura Multi Cloud",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.4.1",
+    "express-session": "^1.18.1",
+    "helmet": "^8.0.0",
+    "pg": "^8.13.1"
+  }
+}

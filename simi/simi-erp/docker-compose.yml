@@ -1,0 +1,17 @@
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: simi_frontend_eva3
+    restart: always
+    env_file:
+      - ./frontend/.env
+    ports:
+      - "80:3000"
+    networks:
+      - simi-eva3-net
+
+networks:
+  simi-eva3-net:
+    driver: bridge

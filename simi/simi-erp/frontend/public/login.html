@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>SIMI ERP - Acceso Seguro</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body class="login-body">
+
+    <div class="login-container">
+        <div class="login-card">
+            <div class="logo-box">
+                <div class="logo-icon">S</div>
+                <div>
+                    <h1>SIMI ERP</h1>
+                    <p>Portal de autenticación segura</p>
+                </div>
+            </div>
+
+            <div class="security-info">
+                <strong>Acceso condicional EVA3</strong>
+                <span>Usuario + contraseña + token de seguridad</span>
+            </div>
+
+            <div id="errorBox" class="error-box">
+                Credenciales incorrectas. Revise usuario, contraseña o token.
+            </div>
+
+            <form action="/login" method="POST" class="login-form">
+                <label for="usuario">Usuario</label>
+                <input type="text" id="usuario" name="usuario" placeholder="Ej: admin" required>
+
+                <label for="password">Contraseña</label>
+                <input type="password" id="password" name="password" placeholder="Ingrese contraseña" required>
+
+                <label for="token">Token MFA</label>
+                <input type="text" id="token" name="token" placeholder="Ej: 123456" required>
+
+                <button type="submit">Ingresar al ERP</button>
+            </form>
+
+            <div class="login-footer">
+                <p>Farmacias SIMI - Evaluación 3 Arquitectura Multi Cloud</p>
+                <p>Node.js + Express + AWS RDS + S3 + IAM</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var params = new URLSearchParams(window.location.search);
+        var errorBox = document.getElementById("errorBox");
+
+        if (params.get("error") === "1") {
+            errorBox.style.display = "block";
+        }
+    </script>
+
+</body>
+</html>
